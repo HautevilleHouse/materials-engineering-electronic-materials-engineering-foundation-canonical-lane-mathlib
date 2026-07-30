@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import MaterialsEngineeringElectronicMaterialsEngineeringFoundation.Crystallography
+import MaterialsEngineeringElectronicMaterialsEngineeringFoundation.PhaseDiagram
+import MaterialsEngineeringElectronicMaterialsEngineeringFoundation.Elasticity
+import MaterialsEngineeringElectronicMaterialsEngineeringFoundation.FractureMechanics
+import MaterialsEngineeringElectronicMaterialsEngineeringFoundation.ElectronicBandStructure
+
+namespace HautevilleHouse
+namespace MaterialsEngineeringElectronicMaterialsEngineeringFoundation
+
+def MaterialsEngineeringClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem materials_engineering_endgame (A : AdmissibleClass) :
+    MaterialsEngineeringClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end MaterialsEngineeringElectronicMaterialsEngineeringFoundation
+end HautevilleHouse
